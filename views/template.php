@@ -1,3 +1,10 @@
+<?php
+
+session_start()
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +16,8 @@
     
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="icon" href="views/img/template/icon-noir.png">
 
   <!--========================================
   =            plugins CSS           =
@@ -55,45 +64,74 @@
   =            BODY ELEMENTS          =
 =========================================-->
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
 <!-- Site wrapper -->
-<div class="wrapper">
 
   <?php
 
-  /*========================================
-  =          HEADER ( ENTETE DU PROJET )            =
-  =========================================*/
+    if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == "ok") {
 
-  include ("modules/header.php");
+      echo '<div class="wrapper">'; 
 
-  /*========================================
-  =          MENU LATERAL            =
-  =========================================*/
+      /*========================================
+      =          HEADER ( ENTETE DU PROJET )            =
+      =========================================*/
 
-  include ("modules/menu.php");
+      include ("modules/header.php");
 
-  /*========================================
-  =          CONTENU            =
-  =========================================*/
+      /*========================================
+      =          MENU LATERAL            =
+      =========================================*/
 
-  include ("modules/contenu.php");
+      include ("modules/menu.php");
 
-  /*========================================
-  =          FOOTER            =
-  =========================================*/
+      /*========================================
+      =          CONTENU            =
+      =========================================*/
 
-  include ("modules/footer.php")
+      if(isset($_GET["route"])){
+
+            if ($_GET["route"] == 'home' || 
+                $_GET["route"] == 'users' ||
+                $_GET["route"] == 'categories' ||
+                $_GET["route"] == 'produits' ||
+                $_GET["route"] == 'clients' ||
+                $_GET["route"] == 'ventes' ||
+                $_GET["route"] == 'creer-vente' ||
+                $_GET["route"] == 'rapport' ||
+                $_GET["route"] == 'logout'){
+
+              include "modules/".$_GET["route"].".php";
+            } 
+            
+            else{
+
+              include "modules/404.php";
+            }
+
+          }else{
+
+          include "modules/home.php";
+          }
+
+        /*=============================================
+        =            Footer          =
+        =============================================*/ 
+
+        include "modules/footer.php";
+
+        echo '</div>';
+
+    } else {
+      /*=============================================
+      =            login          =
+      =============================================*/
+      
+      include "modules/login.php";
+    } 
+
 
   ?>
-
-  
-
-  <!-- =============================================== -->
-  
-
-</div>
-<!-- ./wrapper -->
 
 
 <script src="views/js/template.js"></script>

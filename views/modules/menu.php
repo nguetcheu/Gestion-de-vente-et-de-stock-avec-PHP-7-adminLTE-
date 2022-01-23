@@ -6,7 +6,7 @@
 
             <li class="active">
 
-                <a href="">
+                <a href="home">
 
                     <i class="fa fa-home"></i>
                     <span>Accueil</span>
@@ -17,7 +17,7 @@
 
             <li class="active">
 
-                <a href="">
+                <a href="users">
 
                     <i class="fa fa-user"></i>
                     <span>Utilisateurs</span>
@@ -28,10 +28,10 @@
 
             <li class="active">
 
-                <a href="">
+                <a href="categories">
 
                     <i class="fa fa-th"></i>
-                    <span>Categorie</span>
+                    <span>Categories</span>
 
                 </a>
 
@@ -39,7 +39,7 @@
 
             <li class="active">
 
-                <a href="">
+                <a href="produits">
 
                     <i class="fa fa-product-hunt"></i>
                     <span>Produits</span>
@@ -50,7 +50,7 @@
 
             <li class="active">
 
-                <a href="">
+                <a href="clients">
 
                     <i class="fa fa-users"></i>
                     <span>Clients</span>
@@ -61,7 +61,7 @@
 
             <li class="treeview">
 
-                <a href="">
+                <a href="#">
 
                     <i class="fa fa-list-ul"></i>
 
@@ -79,7 +79,7 @@
 
                     <li>
 
-                        <a href="">
+                        <a href="ventes">
 
                             <i class="fa fa-circle-o"></i>
                             <span>Vente Administateur</span>
@@ -89,7 +89,7 @@
 
                     <li>
 
-                        <a href="">
+                        <a href="creer-vente">
 
                             <i class="fa fa-circle-o"></i>
                             <span>Créer Vente</span>
@@ -99,7 +99,7 @@
 
                     <li>
 
-                        <a href="">
+                        <a href="rapport">
 
                             <i class="fa fa-circle-o"></i>
                             <span>Rapport</span>
